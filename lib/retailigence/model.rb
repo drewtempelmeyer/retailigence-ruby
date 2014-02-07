@@ -18,7 +18,6 @@ module Retailigence #:nodoc:
 
         attrs.each do |attr_name|
           name = underscore(attr_name.to_s).to_sym
-          puts "Setting #{name}"
 
           attr_accessor name
           @safe_attributes << name
