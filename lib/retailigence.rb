@@ -4,6 +4,7 @@ require 'retailigence/exceptions'
 require 'retailigence/model'
 require 'retailigence/search_result'
 require 'retailigence/product'
+require 'retailigence/image'
 
 module Retailigence
   API_VERSION = '2.1'
