@@ -1,4 +1,5 @@
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
+require 'rdoc/task'
 require 'rake/testtask'
 require 'rubocop/rake_task'
 
@@ -16,4 +17,9 @@ task :console do
   require 'retailigence_ruby' # You know what to do.
   ARGV.clear
   IRB.start
+end
+
+RDoc::Task.new do |rdoc|
+  rdoc.main = 'README.md'
+  rdoc.rdoc_files.include('README.md', 'lib/**/*.rb')
 end

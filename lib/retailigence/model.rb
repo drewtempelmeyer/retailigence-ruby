@@ -3,6 +3,8 @@ require 'json'
 
 module Retailigence #:nodoc:
   class Model
+    # Initialize an object with the provided <tt>params</tt>. For the available
+    # <tt>params</tt>, see the model's <tt>Attributes</tt>.
     def initialize(params = {})
       params.each do |key, value|
         mapped_key = underscore(key)
@@ -13,8 +15,9 @@ module Retailigence #:nodoc:
     class << self
       attr_accessor :safe_attributes
 
+      # Creates a list of safe attributes for assign using #initialize.
       def attributes(*attrs)
-        @safe_attributes = []
+        @safe_attributes ||= []
 
         attrs.each do |attr_name|
           name = underscore(attr_name.to_s).to_sym
@@ -24,6 +27,12 @@ module Retailigence #:nodoc:
         end
       end
 
+      # Perform a request using Typhoeus.
+      #
+      # === Arguments
+      # * <tt>method</tt> - Symbol for the request method.
+      # * <tt>action</tt> - The path to request
+      # * <tt>params</tt> - Hash of params to send with the request
       def request(method = :get, action = nil, params = {})
         params[:apikey] = Retailigence.configuration.api_key
         params[:format] = 'JSON'
@@ -34,14 +43,12 @@ module Retailigence #:nodoc:
         JSON.parse response.body
       end
 
-      def post(action = nil, params = {})
-        request(:post, action, params)
-      end
-
+      # Convenience method for performing a GET request. See #request
       def get(action = nil, params = {})
         request(:get, action, params)
       end
 
+      # Convert the camelCase to its underscore/snake_case equivalent.
       def underscore(word)
         word.gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
             .gsub(/([a-z\d])([A-Z])/, '\1_\2')
