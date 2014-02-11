@@ -1,6 +1,6 @@
 require 'test/unit'
 require 'pry'
-# require 'vcr_setup'
+require 'vcr_setup'
 
 require 'retailigence_ruby'
 
