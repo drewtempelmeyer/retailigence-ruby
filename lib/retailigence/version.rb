@@ -1,3 +1,3 @@
-module RetailigenceRuby
-  VERSION = '0.0.1'
+module RetailigenceRuby #:nodoc:
+  VERSION = '0.0.1' #:nodoc:
 end

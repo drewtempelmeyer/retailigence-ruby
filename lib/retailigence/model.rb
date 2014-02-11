@@ -2,6 +2,7 @@ require 'typhoeus'
 require 'json'
 
 module Retailigence #:nodoc:
+  # The base for all API requests and models throughout the Retailigence library.
   class Model
     # Initialize an object with the provided <tt>params</tt>. For the available
     # <tt>params</tt>, see the model's <tt>Attributes</tt>.
@@ -13,6 +14,7 @@ module Retailigence #:nodoc:
     end
 
     class << self
+      # Attributes safe for initialization
       attr_accessor :safe_attributes
 
       # Creates a list of safe attributes for assign using #initialize.
