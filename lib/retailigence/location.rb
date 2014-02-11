@@ -54,6 +54,7 @@ module Retailigence #:nodoc:
     def location=(location) #:nodoc:
       @latitude  = location['latitude']
       @longitude = location['longitude']
+      @location  = location
     end
 
   end
