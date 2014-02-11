@@ -9,6 +9,7 @@ require 'retailigence/location'
 require 'retailigence/retailer'
 require 'retailigence/address'
 require 'retailigence/image'
+require 'retailigence/inventory'
 
 module Retailigence
   API_VERSION = '2.1'

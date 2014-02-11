@@ -1,9 +1,36 @@
 module Retailigence #:nodoc:
+  # A product from the Retailigence API
+  #
+  # === Attributes
+  # * <tt>id</tt> - The Product's GUID
+  # * <tt>externalproductid</tt> - The Retailer provided product ID
+  # * <tt>weight</tt> - The item's weight (if known)
+  # * <tt>msrp</tt> - Manufacturer suggested retail price
+  # * <tt>msrp_currency</tt> - Currency respective of <tt>msrp</tt>
+  # * <tt>name</tt> - Name of the product
+  # * <tt>description_short</tt> - Short description of the product
+  # * <tt>description_long</tt> - Long description of the product
+  # * <tt>barcode</tt> - The barcode/UPC label value
+  # * <tt>brand</tt> - The brand/manufacturer of the product
+  # * <tt>images</tt> - Array of Image
+  # * <tt>sku</tt> - Product's SKU number
+  # * <tt>distance</tt> - The product's Distance
+  # * <tt>url</tt> - URL to purchase or view more details about the product
+  # * <tt>product_type</tt> - String array of product types
+  # * <tt>location</tt> - Location returned from the search results
   class Product < Model
     attributes :id, :externalproductid, :model, :weight, :msrpCurrency, :name,
                :descriptionLong, :barcode, :brand, :images, :sku, :distance,
-               :price, :descriptionShort, :url, :productType, :location
+               :msrp, :descriptionShort, :url, :productType, :productCategory,
+               :location
 
+    # Search products nearby the provided <tt>userlocation</tt>
+    #
+    # === Parameters
+    # See the official Retailigence documentation for a list of parameters.
+    #
+    # === Return
+    # SearchResult with <tt>results</tt> being an array of Products
     def self.search(params = {})
       results = get('products', params)
 
@@ -26,6 +53,15 @@ module Retailigence #:nodoc:
 
     def location=(location) #:nodoc:
       @location = Location.new(location)
+    end
+
+    # Retrieve inventory information for the product and current
+    # <tt>location</tt>.
+    #
+    # === Returns
+    # Inventory
+    def inventory
+      @inventory ||= Inventory.fetch(id, location.id)
     end
 
     ##
