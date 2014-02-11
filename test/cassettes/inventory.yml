@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://apitest.retailigence.com/v2.1/inventory?productId=6cd9f7a2-49de-4c2c-b5a6-7f4d13f9e89a&locationId=869b02ce-4908-4339-8891-6404602ea7e4&apikey=<API_KEY>&format=JSON
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Date:
+      - Tue, 11 Feb 2014 01:19:29 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: "{\"RetailigenceAPIResult\":{\"id\":\"550c2af1-60b3-4160-8a03-c56ed536335b\",\"results\":[{\"ProductLocation\":{\"price\":\"499.99\",\"retailerId\":\"64c6af71-1875-4080-be1c-512566c14012\",\"locationId\":\"869b02ce-4908-4339-8891-6404602ea7e4\",\"quantityText\":\"Out
+        of stock\",\"productName\":\"Xbox One\",\"currency\":\"USD\",\"productId\":\"6cd9f7a2-49de-4c2c-b5a6-7f4d13f9e89a\"}}],\"count\":1,\"request\":{\"id\":\"550c2af1-60b3-4160-8a03-c56ed536335b\",\"page\":1,\"pageSize\":10,\"clientIp\":\"67.170.184.96\"},\"serverId\":\"APP1\",\"version\":\"v2.1\"}}"
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: http://apitest.retailigence.com/v2.1/inventory?productId=6cd9f7a2-49de-4c2c-b5a6-7f4d13f9e89a&locationId=869b02ce-4908-4339-8891-6404602ea7e4&apikey=<API_KEY>&format=JSON
+  recorded_at: Tue, 11 Feb 2014 01:19:31 GMT
+recorded_with: VCR 2.8.0
