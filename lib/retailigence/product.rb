@@ -1,17 +1,31 @@
-module Retailigence
+module Retailigence #:nodoc:
   class Product < Model
     attributes :id, :externalproductid, :model, :weight, :msrpCurrency, :name,
-      :descriptionLong, :barcode, :brand, :images, :sku, :descriptionShort,
-      :url, :productType
+               :descriptionLong, :barcode, :brand, :images, :sku, :distance,
+               :price, :descriptionShort, :url, :productType, :location
 
     def self.search(params = {})
       results = get('products', params)
 
       products = results['RetailigenceSearchResult']['results'].map do |result|
-        Product.new(result['SearchResult']['product'])
+        product = result['SearchResult']['product']
+
+        product[:distance] = result['SearchResult']['distance']
+        product[:price]    = result['SearchResult']['price']
+        product[:location] = result['SearchResult']['location']
+
+        Product.new(product)
       end
 
       SearchResult.new(products)
+    end
+
+    def distance=(distance) #:nodoc:
+      @distance = Distance.new(distance)
+    end
+
+    def location=(location) #:nodoc:
+      @location = Location.new(location)
     end
 
     ##

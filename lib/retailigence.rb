@@ -4,6 +4,10 @@ require 'retailigence/exceptions'
 require 'retailigence/model'
 require 'retailigence/search_result'
 require 'retailigence/product'
+require 'retailigence/distance'
+require 'retailigence/location'
+require 'retailigence/retailer'
+require 'retailigence/address'
 require 'retailigence/image'
 
 module Retailigence
