@@ -1,5 +1,8 @@
 # Retailigence
 
+[![Build Status](https://travis-ci.org/drewtempelmeyer/retailigence-ruby.png?branch=master)](https://travis-ci.org/drewtempelmeyer/retailigence-ruby)
+[![Code Climate](https://codeclimate.com/github/drewtempelmeyer/retailigence-ruby.png)](https://codeclimate.com/github/drewtempelmeyer/retailigence-ruby)
+
 Ruby library for interacting with [Retailigence](http://retailigence.com) API v2.1.
 
 **NOTE:** You'll need an API key from Retailigence. You can [request one from here](http://www.retailigence.com/developers/request-key/).
