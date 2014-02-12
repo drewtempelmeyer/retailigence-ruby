@@ -12,7 +12,7 @@ module Retailigence #:nodoc:
   #     puts product.name
   #   end
   #
-  #   "Microsoft Xbox One - Console"
+  #   # => "Microsoft Xbox One - Console"
   class SearchResult
     include Enumerable
 

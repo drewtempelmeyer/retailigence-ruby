@@ -31,6 +31,15 @@ module Retailigence #:nodoc:
     #
     # === Return
     # SearchResult with <tt>results</tt> being an array of Products
+    #
+    # === Example
+    #   search_results = Retailigence::Product.search(
+    #     userlocation: '37.3323,-122.0312',
+    #     requestorid: 'test',
+    #     name: 'Xbox One'
+    #   )
+    #
+    #   search_results.results # => [#<Retailigence::Product>, #<Retailigence::Product>]
     def self.search(params = {})
       results = get('products', params)
 
