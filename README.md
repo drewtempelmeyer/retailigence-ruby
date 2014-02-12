@@ -8,7 +8,7 @@ Ruby library for interacting with [Retailigence](http://retailigence.com) API v2
 
 Add this line to your application's Gemfile:
 
-    gem 'retailigence_ruby'
+    gem 'retailigence_ruby', '~> 0.0.1'
 
 And then execute:
 
