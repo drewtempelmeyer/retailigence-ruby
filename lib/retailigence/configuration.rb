@@ -15,7 +15,7 @@ module Retailigence #:nodoc:
 
     # Returns true if using the production API
     def production?
-      @production == true
+      @production ||= true
     end
 
     # Returns true if using the test API
