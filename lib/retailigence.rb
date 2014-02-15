@@ -11,7 +11,7 @@ require 'retailigence/address'
 require 'retailigence/image'
 require 'retailigence/inventory'
 
-module Retailigence
+module Retailigence #:nodoc:
   # Retailigence's API Version
   API_VERSION = '2.1'
 
