@@ -4,10 +4,6 @@ require 'json'
 module Retailigence #:nodoc:
   # The base for all API requests and models throughout the Retailigence library.
   class Model
-    EXCEPTION_MAPPINGS = {
-      'INFO_API_NO_RESULTS_FOUND' => NoResults
-    }
-
     # Initialize an object with the provided <tt>params</tt>. For the available
     # <tt>params</tt>, see the model's <tt>Attributes</tt>.
     def initialize(params = {})
