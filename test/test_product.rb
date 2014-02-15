@@ -27,4 +27,16 @@ class TestProduct < Test::Unit::TestCase
       assert_equal Retailigence::Inventory, @product.inventory.class
     end
   end
+
+  def test_no_results_raised
+    VCR.use_cassette('product_test_no_results_raised') do
+      assert_raise Retailigence::NoResults do
+        Retailigence::Product.search(
+          userlocation: '37.3323,-122.0312',
+          requestorid: 'test',
+          keywords: 'nothingtoseehereguys'
+        )
+      end
+    end
+  end
 end
