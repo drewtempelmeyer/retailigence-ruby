@@ -24,4 +24,4 @@ RDoc::Task.new do |rdoc|
   rdoc.rdoc_files.include('README.md', 'lib/**/*.rb')
 end
 
-task default: [ :test ]
+task default: [ :rubocop, :test ]
