@@ -12,7 +12,7 @@ module Retailigence #:nodoc:
   # * <tt>product_name</tt> - The Product#name
   class Inventory < Model
     attributes :product_id, :retailer_id, :location_id, :price, :currency,
-      :quantity, :quantityText, :productName
+               :quantity, :quantityText, :productName
 
     # Retrieve the inventory information for the provided <tt>product_id</tt>
     # and <tt>location_id</tt>

@@ -18,8 +18,8 @@ module Retailigence #:nodoc:
   # * <tt>longitide</tt> - The location's longitude
   class Location < Model
     attributes :id, :timezone, :distance, :phone, :tNavLink, :location,
-      :address, :hours, :mapLink, :name, :retailer, :retlocationid, :latitude,
-      :longitude
+               :address, :hours, :mapLink, :name, :retailer, :retlocationid,
+               :latitude, :longitude
 
     # Search locations and retailers based on the <tt>params</tt> passed.
     #
@@ -56,6 +56,5 @@ module Retailigence #:nodoc:
       @longitude = location['longitude']
       @location  = location
     end
-
   end
 end
