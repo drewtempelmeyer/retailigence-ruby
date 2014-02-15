@@ -1,0 +1,12 @@
+AllCops:
+  Excludes:
+    - html/**
+    - bin/**
+    - test/**
+
+LineLength:
+  Enabled: false
+
+Documentation:
+  # don't require classes to be documented
+  Enabled: false
