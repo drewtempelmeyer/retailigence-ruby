@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Retailigence #:nodoc:
   # Representation of the distance from the <tt>userlocation</tt> and the
   # respective Product or Location

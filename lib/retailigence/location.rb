@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Retailigence #:nodoc:
   # A location result from the Retailigence API
   #

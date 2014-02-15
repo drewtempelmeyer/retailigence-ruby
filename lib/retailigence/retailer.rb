@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Retailigence #:nodoc:
   # A retailer is the parent object for locations. For example, "Best Buy"
   # is the retailer and all of their stores are <tt>locations</tt>.

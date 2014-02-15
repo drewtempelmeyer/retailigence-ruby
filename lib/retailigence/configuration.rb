@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Retailigence #:nodoc:
   # Configure Retailigence with your credentials.
   #

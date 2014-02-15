@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Retailigence #:nodoc:
   # Represents an address returned from Retailigence. The address is normally
   # embedded within a Location object.

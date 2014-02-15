@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Retailigence #:nodoc:
   # Raised when Retailigence doesn't find any results
   class NoResults < StandardError; end

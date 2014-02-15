@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'retailigence/version'
 require 'retailigence/configuration'
 require 'retailigence/exceptions'
