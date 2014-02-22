@@ -6,8 +6,8 @@ module Retailigence #:nodoc:
   # * <tt>id</tt> - The Product's GUID
   # * <tt>externalproductid</tt> - The Retailer provided product ID
   # * <tt>weight</tt> - The item's weight (if known)
-  # * <tt>msrp</tt> - Manufacturer suggested retail price
-  # * <tt>msrp_currency</tt> - Currency respective of <tt>msrp</tt>
+  # * <tt>price</tt> - Manufacturer suggested retail price
+  # * <tt>msrp_currency</tt> - Currency respective of <tt>price</tt>
   # * <tt>name</tt> - Name of the product
   # * <tt>description_short</tt> - Short description of the product
   # * <tt>description_long</tt> - Long description of the product
@@ -22,7 +22,7 @@ module Retailigence #:nodoc:
   class Product < Model
     attributes :id, :externalproductid, :model, :weight, :msrpCurrency, :name,
                :descriptionLong, :barcode, :brand, :images, :sku, :distance,
-               :msrp, :descriptionShort, :url, :productType, :productCategory,
+               :price, :descriptionShort, :url, :productType, :productCategory,
                :location
 
     # Search products nearby the provided <tt>userlocation</tt>
