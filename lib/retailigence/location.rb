@@ -32,9 +32,14 @@ module Retailigence #:nodoc:
     def self.search(params = {})
       results = get('locations', params)
 
-      retailers = results['RetailigenceAPIResult']['results'].map do |result|
-        Retailer.new(result['Retailer'])
-      end
+      retailers =
+        if results['RetailigenceAPIResult']['count'] == 0
+          []
+        else
+          results['RetailigenceAPIResult']['results'].map do |result|
+            Retailer.new(result['Retailer'])
+          end
+        end
 
       SearchResult.new(retailers)
     end
